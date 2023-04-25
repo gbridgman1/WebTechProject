@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babson Fitness</title>
+</head>
+<style>
+    header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 10px;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+nav ul li {
+	margin: 0 10px;
+}
+
+nav ul li a {
+	color: rgb(67, 63, 63);
+	text-decoration: none;
+	font-size: 18px;
+	transition: color 0.3s, font-size 0.3s;
+}
+
+nav ul li a:hover {
+	color: #139d23;
+	font-size: 20px;
+}
+body{
+    padding-top: 35px;
+}
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* Header styles */
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Global Styles */
+
+body {
+	font-family: 'Helvetica Neue', sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	color: #333;
+	background-color: #f9f9f9;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Helvetica Neue', sans-serif;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 20px 0;
+}
+
+p {
+	margin: 10px 0;
+	color: #333;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ff6f69;
+}
+
+.btn {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #ff6f69;
+	color: #fff;
+	border-radius: 5px;
+	text-transform: uppercase;
+	font-weight: 700;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+	background-color: #333;
+	color: #fff;
+}
+
+/* Header Styles */
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	z-index: 999;
+}
+
+header h1 {
+	font-size: 30px;
+	line-height: 1.2;
+	margin-left: 15px;
+}
+.hero {
+	position: relative;
+	height: 500px;
+	background-color: #eee;
+	background-image: url('img/hero-bg.jpg');
+	background-size: cover;
+	background-position: center center;
+	text-align: center;
+	color: #fff;
+}
+
+.hero-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 500px;
+}
+
+.hero-text h2 {
+	font-size: 40px;
+	line-height: 1.2;
+	margin-bottom: 20px;
+}
+
+.feature-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 20px;
+}
+
+.feature-item {
+	background-color: #fff;
+	padding: 30px;
+	text-align: center;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.feature-item img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	margin-bottom: 20px;
+}
+
+.feature-item h3 {
+	font-size: 24px;
+	line-height: 1.2;
+	margin-bottom: 10px;
+}
+
+.feature-item p {
+	font-size: 16px;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+.classes {
+	padding: 80px 0;
+	background-color: #fff;
+}
+h2{
+	color: #139d23;
+}
+.home{
+	font-weight: bold;
+}
+.brac{
+	width: 100%;
+	height: 100%;
+}
+.classes {
+  background-color: #f9f9f9;
+  padding: 50px;
+  text-align: center;
+}
+
+.classes h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+  padding-top: 10px;
+}
+
+.class-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 50px;
+  justify-items: center;
+  align-items: center;
+}
+
+.class-item {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+}
+
+.class-item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.class-item h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.class-item p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.features{
+	text-align: center;
+	font-size: 36px;
+  margin-bottom: 30px;
+}
+</style>
+<body>
+    <header>
+		<nav>
+			<ul>
+				<li class="home"><a href="/project/home.html">Home</a></li>
+				<li><a href="/project/workouts.html">Workouts</a></li>
+				<li><a href="/project/nutrition.html">Nutrition</a></li>
+				<li><a href="/project/profile.html">Profile</a></li>
+				<li><a href="/project/contactus.html">Contact Us</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section class="hero">
+			<div class="hero-text">
+				<br>
+				<h2>Welcome to Babson Fitness</h2>
+				<p>We offer a wide range of fitness programs to help you achieve your health and fitness goals. Whether you're a beginner or an experienced athlete, we have something for everyone.</p>
+				<br><br>
+				<a href="/project/profile.html" class="btn">Get Started</a>
+			</div>
+			<img class="brac" src="/images/brac1.jpeg" alt="Hero background">
+		</section>
+<br><br><br>
+		<section class="features">
+			<h2 class="features">Our Features</h2>
+			<div class="feature-grid">
+				<div class="feature-item">
+					<img src="/images/personaltraining.webp" alt="Feature 1">
+					<h3>Personalized Training Plans</h3>
+					<p>We offer personalized training plans tailored to your specific fitness goals and needs.</p>
+				</div>
+				<div class="feature-item">
+					<img src="/images/nutrition.webp" alt="Feature 2">
+					<h3>Nutrition Guidance</h3>
+					<p>Our expert nutritionists will help you make healthy and sustainable dietary choices that support your fitness goals.</p>
+				</div>
+				<div class="feature-item">
+					<img src="/images/community.webp" alt="Feature 3">
+					<h3>Community Support</h3>
+					<p>Join our community of like-minded fitness enthusiasts for motivation, support, and accountability.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="classes">
+			<h2>Classes</h2>
+			<div class="class-grid">
+			  <div class="class-item">
+				<img src="/images/strengthtraining.jpeg" alt="Class 1">
+				<h3>Strength Training</h3>
+				<p>Our strength classes are designed to help you build muscle and increase your overall strength, giving you the confidence to take on any challenge. Whether you're new to lifting or a seasoned pro, our expert trainers will guide you through a variety of exercises that will challenge and push you to your limits, helping you achieve the results you want.</p>
+			  </div>
+			  <div class="class-item">
+				<img src="/images/yoga.jpeg" alt="Class 2">
+				<h3>Yoga</h3>
+				<p>Our yoga classes offer a sanctuary where you can find your inner peace and balance with every breath. Our experienced instructors will guide you through each pose and sequence, helping you to connect with your mind and body, relieve stress, and improve your flexibility and strength. Whether you're a beginner or an advanced yogi, our classes are the perfect way to cultivate a sense of calm and tranquility in your life.</p>
+			  </div>
+			  <div class="class-item">
+				<img src="/images/endurancetraining.jpeg" alt="Class 3">
+				<h3>Endurance Training</h3>
+				<p>Our endurance classes are designed to push you to your limits and help you go the distance. Whether you're training for a marathon or simply looking to increase your stamina, our expert trainers will guide you through a variety of cardio and resistance exercises that will challenge your endurance, build your strength, and help you achieve your fitness goals. With our high-energy classes and supportive community, you'll feel empowered to take on any challenge and achieve your personal best.</p>
+			  </div>
+			</div>
+		  </section>
+</body>
+</html>

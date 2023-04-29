@@ -161,6 +161,48 @@ body {
 .lower{
     color: #139d23;
 }
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+.typewriter {
+  overflow: hidden; /* Ensures the text is not visible until the animation starts */
+  border-right: 0.15em solid orange; /* Adds a blinking cursor effect */
+  white-space: nowrap; /* Keeps the text on one line */
+  margin: 0 auto; /* Centers the element */
+  letter-spacing: 0.1em; /* Increases the spacing between letters */
+  animation: typing 2s steps(30, end), blink-caret 0.5s step-end infinite;
+  /* The `typing` animation simulates typing each character, and the `blink-caret` animation adds a blinking cursor effect */
+}
+
+@keyframes typing {
+  from {
+    width: 0; /* Starts with no width (i.e. no text) */
+  }
+  to {
+    width: 100%; /* Ends with full width (i.e. all text displayed) */
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent; /* Makes the cursor invisible */
+  }
+  50% {
+    border-color: orange; /* Makes the cursor visible */
+  }
+}
+header {
+  transition: background-color 0.3s;
+}
+
+header.header-scroll {
+  background-color: rgb(107, 240, 131);
+}
 </style>
 <body>
     <header>
@@ -179,21 +221,21 @@ body {
 			<h2 class="upper">Upper Body Workouts</h2>
 			<div class="workout">
 				<h3>Push-Ups</h3>
-				<p>Instructions: Start in a plank position with your hands shoulder-width apart. Lower your body until your chest nearly touches the floor. Pause for a second, then push yourself back up.</p>
+				<p class="typewriter">Instructions: Start in a plank position with your hands shoulder-width apart. Lower your body until your chest nearly touches the floor. Pause for a second, then push yourself back up.</p>
 				<div class="video">
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/i9sTjhN4Z3M" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
 			<div class="workout">
 				<h3>Pull-Ups</h3>
-				<p>Instructions: Grab a pull-up bar with an overhand grip. Hang at arm's length, then pull your body up until your chin is above the bar. Pause, then lower yourself back down to the starting position.</p>
+				<p class="typewriter">Instructions: Grab a pull-up bar with an overhand grip. Hang at arm's length, then pull your body up until your chin is above the bar. Pause, then lower yourself back down to the starting position.</p>
 				<div class="video">
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/XeErfmGSwfE" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
 			<div class="workout">
 				<h3>Dumbbell Bicep Curls</h3>
-				<p>Instructions: Stand with your feet shoulder-width apart and hold a pair of dumbbells at arm's length. Curl the dumbbells up to your shoulders, then lower them back down to the starting position.</p>
+				<p class="typewriter">Instructions: Stand with your feet shoulder-width apart and hold a pair of dumbbells at arm's length. Curl the dumbbells up to your shoulders, then lower them back down to the starting position.</p>
 				<div class="video">
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/ykJmrZ5v0Oo" frameborder="0" allowfullscreen></iframe>
 				</div>
@@ -203,26 +245,56 @@ body {
 			<h2 class="lower">Lower Body Workouts</h2>
 			<div class="workout">
 				<h3>Squats</h3>
-				<p>Instructions: Stand with your feet shoulder-width apart and your toes pointing slightly outward. Lower your body as if you were sitting back into a chair, keeping your back straight. Pause, then push yourself back up to the starting position.</p>
+				<p class="typewriter">Instructions: Stand with your feet shoulder-width apart and your toes pointing slightly outward. Lower your body as if you were sitting back into a chair, keeping your back straight. Pause, then push yourself back up to the starting position.</p>
 				<div class="video">
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/Uv_DKDl7EjA" frameborder="0" allowfullscreen></iframe>
                 </div>
                 </div>
                 <div class="workout">
                 <h3>Lunges</h3>
-                <p>Instructions: Stand with your feet hip-width apart. Take a big step forward with your right foot and lower your body until your right knee is bent at a 90-degree angle. Pause, then push yourself back up to the starting position. Repeat on the other side.</p>
+                <p class="typewriter">Instructions: Stand with your feet hip-width apart. Take a big step forward with your right foot and lower your body until your right knee is bent at a 90-degree angle. Pause, then push yourself back up to the starting position. Repeat on the other side.</p>
                 <div class="video">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/QOVaHwm-Q6U" frameborder="0" allowfullscreen></iframe>
                 </div>
                 </div>
                 <div class="workout">
                 <h3>Deadlifts</h3>
-                <p>Instructions: Stand with your feet hip-width apart and a barbell in front of you. Bend your knees and grasp the bar with an overhand grip. Keeping your back straight, stand up with the bar, then lower it back down to the starting position.</p>
+                <p class="typewriter">Instructions: Stand with your feet hip-width apart and a barbell in front of you. Bend your knees and grasp the bar with an overhand grip. Keeping your back straight, stand up with the bar, then lower it back down to the starting position.</p>
                 <div class="video">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/op9kVnSso6Q" frameborder="0" allowfullscreen></iframe>
                 </div>
                 </div>
                 </section>
                 </main>
+			<script>
+				const h3Elements = document.querySelectorAll('h3');
+
+				h3Elements.forEach(h3 => {
+  				h3.addEventListener('mouseover', () => {
+    			h3.style.animation = 'bounce 0.5s';
+  				});
+
+  				h3.addEventListener('mouseout', () => {
+    			h3.style.animation = '';
+  			});
+			});
+			
+  window.onload = function() {
+    var typewriters = document.getElementsByClassName("typewriter"); // Finds all elements with the typewriter class
+    for (var i = 0; i < typewriters.length; i++) {
+      var text = typewriters[i].innerHTML; // Gets the text inside the element
+      typewriters[i].innerHTML = ""; // Clears the element
+      for (var j = 0; j < text.length; j++) {
+        // Adds each character with a span element and the typing class
+        typewriters[i].innerHTML += '<span class="typing">' + text.charAt(j) + '</span>';
+      }
+    }
+  };
+  window.addEventListener('scroll', function() {
+  		const header = document.querySelector('header');
+  		header.classList.toggle('header-scroll', window.scrollY > 0);
+		});
+	</script>
+
 </body>
 </html>

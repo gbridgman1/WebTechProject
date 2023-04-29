@@ -163,6 +163,27 @@ li {
 .ffe{
     color: #139d23;
 }
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#java {
+  animation: fade-in 0.5s ease-out;
+}
+header {
+  transition: background-color 0.3s;
+}
+
+header.header-scroll {
+  background-color: rgb(107, 240, 131);
+}
 </style>
 <body>
     <header>
@@ -178,7 +199,7 @@ li {
 	</header>
     <main>
 		<section>
-			<h2 class="supp">Supplements</h2>
+			<h2 id="java" class="supp">Supplements</h2>
 			<p>Supplements can be a helpful addition to a healthy diet and exercise routine. Here are some supplements to consider:</p>
 			<ul>
 				<li>Protein powder</li>
@@ -189,7 +210,7 @@ li {
 			</ul>
 		</section>
 		<section>
-			<h2>Heart Health Foods</h2>
+			<h2 id="java">Heart Health Foods</h2>
 			<p>Eating heart-healthy foods can improve your cardiovascular health and reduce your risk of heart disease. Here are some heart-healthy foods to include in your diet:</p>
 			<ul>
 				<li>Salmon</li>
@@ -200,7 +221,7 @@ li {
 			</ul>
 		</section>
 		<section>
-			<h2 class="super">Superfoods</h2>
+			<h2 id="java" class="super">Superfoods</h2>
 			<p>Superfoods are nutrient-dense foods that provide a variety of health benefits. Here are some superfoods to consider adding to your diet:</p>
 			<ul>
 				<li>Blueberries</li>
@@ -211,7 +232,7 @@ li {
 			</ul>
 		</section>
 		<section>
-			<h2>Balanced Meals</h2>
+			<h2 id="java">Balanced Meals</h2>
 			<p>Eating balanced meals can provide your body with the nutrients it needs to function properly. Here is a breakdown of what a balanced meal should include:</p>
 			<ul>
 				<li>Protein (lean meats, beans, tofu)</li>
@@ -221,7 +242,7 @@ li {
 			</ul>
 		</section>
 		<section>
-			<h2 class="protein">Protein Intake</h2>
+			<h2 id="java" class="protein">Protein Intake</h2>
 			<p>Protein is essential for building and repairing muscles. Here is how much protein you should aim to consume each day:</p>
 			<ul>
 				<li>0.8 grams per kilogram of body weight for sedentary individuals</li>
@@ -230,7 +251,7 @@ li {
 			</ul>
 		</section>
 		<section>
-			<h2>Food for Muscle Growth</h2>
+			<h2 id="java">Food for Muscle Growth</h2>
 			<p>Eating the right foods can help support muscle growth. Here are some foods to consider adding to your diet:</p>
             <ul>
                 <li>Lean meats (chicken, turkey, fish)</li>
@@ -241,7 +262,7 @@ li {
             </ul>
         </section>
         <section>
-            <h2 class="ffe">Food for Endurance</h2>
+            <h2 id="java" class="ffe">Food for Endurance</h2>
             <p>Eating the right foods can help support endurance and improve your athletic performance. Here are some foods to consider adding to your diet:</p>
             <ul>
                 <li>Complex carbohydrates (whole grains, fruits, vegetables)</li>
@@ -252,5 +273,15 @@ li {
             </ul>
         </section>
 </main>
+<script>
+	const titles = document.querySelectorAll('.section-title');
+titles.forEach((title, index) => {
+  title.style.animationDelay = `${index * 0.8}s`;
+});
+window.addEventListener('scroll', function() {
+  		const header = document.querySelector('header');
+  		header.classList.toggle('header-scroll', window.scrollY > 0);
+		});
+</script>
 </body>
 </html>

@@ -117,7 +117,7 @@ a:hover {
 	color: #fff;
 }
 
-/* Header Styles */
+
 
 header {
 	position: fixed;
@@ -257,6 +257,21 @@ h2{
 	font-size: 36px;
   margin-bottom: 30px;
 }
+header {
+  transition: background-color 0.3s;
+}
+
+header.header-scroll {
+  background-color: rgb(107, 240, 131);
+}
+.hero-text {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-text.fade-in {
+  opacity: 1;
+}
 </style>
 <body>
     <header>
@@ -323,5 +338,20 @@ h2{
 			  </div>
 			</div>
 		  </section>
+
+	<script>
+		window.addEventListener('scroll', function() {
+  		const header = document.querySelector('header');
+  		header.classList.toggle('header-scroll', window.scrollY > 0);
+		});
+
+		const heroText = document.querySelector('.hero-text');
+		function fadeIn(element) {
+  		element.classList.add('fade-in');
+		}
+		setTimeout(() => {
+  		fadeIn(heroText);
+		}, 1000);
+	</script>
 </body>
 </html>

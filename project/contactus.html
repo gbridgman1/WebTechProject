@@ -186,6 +186,10 @@ h1{
 .contactus{
 	font-weight: bold;
 }
+.glow {
+  border: 2px solid #2ecc71; 
+  box-shadow: 0px 0px 8px 2px rgba(46, 204, 113, 0.8);
+}
 </style>
 <body>
     <header>
@@ -229,5 +233,23 @@ h1{
 			<p>Email us at <a href="mailto:babsonfitness@gmail.com">babsonfitness@gmail.com</a></p>
 		</div>
 	</div>
+	<script>
+		const nameInput = document.getElementById("name");
+		const emailInput = document.getElementById("email");
+		const messageInput = document.getElementById("message");
+		
+		nameInput.addEventListener("input", function() {
+		  document.querySelector("label[for='name']").classList.add("glow");
+		});
+	  
+		emailInput.addEventListener("input", function() {
+		  document.querySelector("label[for='email']").classList.add("glow");
+		});
+
+		messageInput.addEventListener("input", function() {
+		  document.querySelector("label[for='message']").classList.add("glow");
+		});
+
+	</script>
 </body>
 </html>
